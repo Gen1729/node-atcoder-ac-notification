@@ -1,7 +1,10 @@
 {
   "users": [
-    "tourist"
+    "TOMATO10",
+    "caz37OwO",
+    "toka0428",
+    "jet0312"
   ],
-  "pollingIntervalSeconds": 30,
-  "retryDelaySeconds": 60
+  "pollingIntervalSeconds": 3600,
+  "retryDelaySeconds": 3600
 }
