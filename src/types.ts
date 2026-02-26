@@ -46,6 +46,7 @@ export interface ACNotification {
   problemId: string;
   language: string;
   submissionId: number;
+  point: number;
 }
 
 /**

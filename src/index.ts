@@ -97,7 +97,7 @@ class ACMonitor {
    * AC 提出を処理
    */
   private async processACSubmission(submission: Submission): Promise<void> {
-    const { user_id, problem_id, contest_id, language, id, epoch_second } = submission;
+    const { user_id, problem_id, contest_id, language, id, epoch_second, point } = submission;
 
     // 既に AC 済みの問題かチェック
     if (this.stateStore.isSolved(user_id, problem_id)) {
@@ -115,6 +115,7 @@ class ACMonitor {
       problemId: problem_id,
       language: language,
       submissionId: id,
+      point: point,
     };
 
     await this.notifier.notify(notification);
