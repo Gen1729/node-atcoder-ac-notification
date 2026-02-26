@@ -20,10 +20,12 @@ export interface Submission {
 export interface Config {
   /** 監視対象の AtCoder ユーザー ID のリスト */
   users: string[];
-  /** ポーリング間隔（秒） */
-  pollingIntervalSeconds: number;
+  /** ポーリング間隔（秒） - スケジューリングモードでも使用される場合がある */
+  pollingIntervalSeconds?: number;
   /** エラー時のリトライ待機時間（秒） */
   retryDelaySeconds: number;
+  /** スケジュール設定（cron形式または時刻のリスト）。設定されている場合、定期的なポーリングではなくスケジュール実行になる */
+  scheduleTimes?: string[];
 }
 
 /**

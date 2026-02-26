@@ -4,7 +4,6 @@ import { Config } from './types';
 
 const DEFAULT_CONFIG: Config = {
   users: [],
-  pollingIntervalSeconds: 30,
   retryDelaySeconds: 60,
 };
 
@@ -29,12 +28,22 @@ export function loadConfig(configPath: string = 'config.json'): Config {
       throw new Error('config.users は配列である必要があります');
     }
 
-    if (typeof config.pollingIntervalSeconds !== 'number' || config.pollingIntervalSeconds <= 0) {
+    if (config.pollingIntervalSeconds !== undefined && 
+        (typeof config.pollingIntervalSeconds !== 'number' || config.pollingIntervalSeconds <= 0)) {
       throw new Error('config.pollingIntervalSeconds は正の数値である必要があります');
     }
 
     if (typeof config.retryDelaySeconds !== 'number' || config.retryDelaySeconds <= 0) {
       throw new Error('config.retryDelaySeconds は正の数値である必要があります');
+    }
+
+    if (config.scheduleTimes !== undefined) {
+      if (!Array.isArray(config.scheduleTimes)) {
+        throw new Error('config.scheduleTimes は配列である必要があります');
+      }
+      if (config.scheduleTimes.length === 0) {
+        throw new Error('config.scheduleTimes は少なくとも1つの時刻を含む必要があります');
+      }
     }
 
     return config;
@@ -59,8 +68,8 @@ export function createSampleConfig(configPath: string = 'config.json'): void {
 
   const sampleConfig: Config = {
     users: ['tourist', 'jiangly'],
-    pollingIntervalSeconds: 30,
     retryDelaySeconds: 60,
+    scheduleTimes: ['09:00', '21:00'],  // 毎日9時と21時に実行
   };
 
   fs.writeFileSync(fullPath, JSON.stringify(sampleConfig, null, 2), 'utf-8');

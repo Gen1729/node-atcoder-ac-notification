@@ -7,7 +7,7 @@ import { ACNotification, Notifier } from './types';
 export class ConsoleNotifier implements Notifier {
   notify(notification: ACNotification): void {
     const timestamp = format(notification.timestamp, 'yyyy-MM-dd HH:mm:ss');
-    const message = `${timestamp} ${notification.userId} AC: ${notification.contestId} ${notification.problemId} point: ${notification.point} (${notification.language})`;
+    const message = `${timestamp} ${notification.userId} AC:${notification.contestId} ${notification.problemId} point:${notification.point} (${notification.language})`;
     
     console.log(message);
   }
