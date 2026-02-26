@@ -1,0 +1,28 @@
+{
+  "name": "node-atcoder-ac-notification",
+  "version": "1.0.0",
+  "description": "AtCoder AC notification tool that monitors submissions and notifies when users solve problems",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "ts-node-dev --respawn src/index.ts",
+    "start": "ts-node src/index.ts",
+    "build": "tsc",
+    "run:prod": "node dist/index.js"
+  },
+  "keywords": [
+    "atcoder",
+    "notification",
+    "monitor"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "date-fns": "^3.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.19",
+    "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.3.3"
+  }
+}

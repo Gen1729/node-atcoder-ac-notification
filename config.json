@@ -1,0 +1,7 @@
+{
+  "users": [
+    "tourist"
+  ],
+  "pollingIntervalSeconds": 30,
+  "retryDelaySeconds": 60
+}
