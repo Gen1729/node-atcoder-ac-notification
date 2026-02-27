@@ -5,7 +5,7 @@ on:
     # config.json の scheduleTimes に対応（JST → UTC に変換）
     # JST:  00:00  03:00  06:00  09:00  12:00  15:00  18:00  21:00
     # UTC:  15:00  18:00  21:00  00:00  03:00  06:00  09:00  12:00
-    - cron: '*/5 * * * *'
+    - cron: '0 */3 * * *'
   # ↓ GitHub の Actions タブから手動実行も可能にする
   workflow_dispatch:
 
