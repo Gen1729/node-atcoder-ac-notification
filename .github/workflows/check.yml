@@ -36,6 +36,11 @@ jobs:
       # ── 4. AC チェックを1回だけ実行して終了 ─────────────────────
       - name: AtCoder AC チェック（1回実行モード）
         run: RUN_ONCE=true npx ts-node src/index.ts
+        env:
+          # Discord 通知を使う場合: リポジトリの Settings → Secrets → Actions に
+          # DISCORD_WEBHOOK_URL という名前で Webhook URL を登録してください。
+          # 未設定の場合は Discord 通知をスキップしてコンソール出力のみになります。
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
 
       # ── 5. state.json を Git に保存（変更があった場合のみ） ──────
       - name: state.json をコミット・プッシュ

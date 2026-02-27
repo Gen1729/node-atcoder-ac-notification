@@ -2,7 +2,7 @@ import cron from 'node-cron';
 import { loadConfig } from './config';
 import { StateStore } from './stateStore';
 import { AtCoderClient } from './atcoderClient';
-import { ConsoleNotifier } from './notifier';
+import { ConsoleNotifier, DiscordNotifier, MultiNotifier } from './notifier';
 import { ACNotification, Submission } from './types';
 
 /**
@@ -16,7 +16,14 @@ class ACMonitor {
   private readonly config = loadConfig();
   private readonly stateStore = new StateStore();
   private readonly atcoderClient = new AtCoderClient();
-  private readonly notifier = new ConsoleNotifier();
+  /**
+   * 常にターミナル（ログ）へ出力する。
+   * DISCORD_WEBHOOK_URL が設定されている場合は Discord にも同時送信する。
+   */
+  private readonly notifier = new MultiNotifier([
+    new ConsoleNotifier(),
+    new DiscordNotifier(),  // DISCORD_WEBHOOK_URL が未設定なら自動的にスキップされる
+  ]);
 
   /** 実行中フラグ（SIGINT 受信時に false にしてループを終了させる） */
   private isRunning = false;

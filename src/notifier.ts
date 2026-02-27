@@ -51,7 +51,71 @@ export class MultiNotifier implements Notifier {
 }
 
 // =============================================================================
-// 拡張例（将来的に追加したい Notifier のテンプレート）
+// Discord 通知
+// =============================================================================
+
+/**
+ * Discord の Incoming Webhook を使って AC 通知を送る通知クラス。
+ *
+ * Webhook URL は環境変数 DISCORD_WEBHOOK_URL から取得する。
+ * URL が設定されていない場合は警告を出して何もしない（他の Notifier は継続動作する）。
+ *
+ * Discord メッセージ例:
+ *   ✅ **tourist** が **abc390_c** を AC！
+ *   コンテスト: abc390 | 300点 | C++ 23 (gcc 12.2)
+ *   https://atcoder.jp/contests/abc390/submissions/12345678
+ */
+export class DiscordNotifier implements Notifier {
+  private readonly webhookUrl: string | undefined;
+
+  constructor() {
+    // 環境変数から Webhook URL を読み込む（GitHub Actions Secrets や .env で設定）
+    this.webhookUrl = process.env.DISCORD_WEBHOOK_URL;
+  }
+
+  async notify(notification: ACNotification): Promise<void> {
+    if (!this.webhookUrl) {
+      console.warn('[DiscordNotifier] DISCORD_WEBHOOK_URL が設定されていないためスキップします');
+      return;
+    }
+
+    const submissionUrl =
+      `https://atcoder.jp/contests/${notification.contestId}/submissions/${notification.submissionId}`;
+
+    // Discord の Embed（リッチメッセージ）形式で送信する
+    const body = JSON.stringify({
+      embeds: [
+        {
+          // タイトル行: クリックするとサブミッションページに飛ぶ
+          title: `✅ ${notification.userId} が ${notification.problemId} を AC！`,
+          url: submissionUrl,
+          color: 0x00c000, // 緑色
+          fields: [
+            { name: 'コンテスト', value: notification.contestId, inline: true },
+            { name: '配点',       value: `${notification.point}点`,  inline: true },
+            { name: '言語',       value: notification.language,       inline: true },
+          ],
+          // フッターに提出時刻を表示（Discord が自動でローカル時刻に変換して表示する）
+          timestamp: notification.timestamp.toISOString(),
+        },
+      ],
+    });
+
+    const response = await fetch(this.webhookUrl, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body,
+    });
+
+    // 204 No Content が正常レスポンス。それ以外はエラーとして投げる
+    if (!response.ok && response.status !== 204) {
+      throw new Error(`Discord Webhook への送信に失敗しました: HTTP ${response.status}`);
+    }
+  }
+}
+
+// =============================================================================
+// 拡張例（必要に応じて追加してください）
 // =============================================================================
 //
 // export class LineNotifier implements Notifier {
