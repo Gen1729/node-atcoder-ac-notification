@@ -1,0 +1,52 @@
+name: AtCoder AC 定期チェック
+
+on:
+  schedule:
+    # config.json の scheduleTimes に対応（JST → UTC に変換）
+    # JST:  00:00  03:00  06:00  09:00  12:00  15:00  18:00  21:00
+    # UTC:  15:00  18:00  21:00  00:00  03:00  06:00  09:00  12:00
+    - cron: '0 0,3,6,9,12,15,18,21 * * *'
+  # ↓ GitHub の Actions タブから手動実行も可能にする
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+
+    # data/state.json を commit して push するために書き込み権限が必要
+    permissions:
+      contents: write
+
+    steps:
+      # ── 1. リポジトリを取得 ────────────────────────────────────────
+      - name: リポジトリをチェックアウト
+        uses: actions/checkout@v4
+
+      # ── 2. Node.js の準備 ─────────────────────────────────────────
+      - name: Node.js のセットアップ
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'    # node_modules をキャッシュして高速化
+
+      # ── 3. 依存パッケージのインストール ──────────────────────────
+      - name: 依存関係のインストール
+        run: npm ci       # package-lock.json に固定されたバージョンをインストール
+
+      # ── 4. AC チェックを1回だけ実行して終了 ─────────────────────
+      - name: AtCoder AC チェック（1回実行モード）
+        run: RUN_ONCE=true npx ts-node src/index.ts
+
+      # ── 5. state.json を Git に保存（変更があった場合のみ） ──────
+      - name: state.json をコミット・プッシュ
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/state.json
+          if git diff --cached --quiet; then
+            echo "state.json に変更なし。コミットをスキップします。"
+          else
+            # [skip ci] を付けることで、このコミットで再度ワークフローが起動しないようにする
+            git commit -m "chore: update state.json [skip ci]"
+            git push
+          fi

@@ -35,6 +35,14 @@ class ACMonitor {
       return;
     }
 
+    // RUN_ONCE=true の場合は1回チェックして即終了（GitHub Actions などの CI 用）
+    if (process.env.RUN_ONCE === 'true') {
+      console.log('=== 1回実行モード（RUN_ONCE）===');
+      await this.checkAllUsers();
+      console.log('=== チェック完了。終了します ===');
+      return;
+    }
+
     // scheduleTimes が設定されていればスケジュールモード、
     // pollingIntervalSeconds が設定されていればポーリングモードで起動
     if (this.config.scheduleTimes && this.config.scheduleTimes.length > 0) {

@@ -4,8 +4,8 @@ node_modules/
 # Build output
 dist/
 
-# State files
-data/
+# State files は git で永続化するため追跡対象にする
+# （data/ ディレクトリ自体は追跡するが、不要なファイルが増えた場合に備えて必要に応じて除外パターンを追加）
 
 # Config (uncomment if you want to ignore local config)
 # config.json
