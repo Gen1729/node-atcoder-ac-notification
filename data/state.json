@@ -1,7 +1,7 @@
 {
   "lastChecked": {
     "caz37OwO": 1772270066,
-    "jet0312": 1772042948,
+    "jet0312": 1772273278,
     "TOMATO10": 1772205902
   },
   "solvedProblems": {
@@ -24,6 +24,7 @@
     "caz37OwO:abc242_a": true,
     "caz37OwO:abc242_b": true,
     "caz37OwO:abc242_c": true,
-    "caz37OwO:abc242_d": true
+    "caz37OwO:abc242_d": true,
+    "jet0312:tessoku_book_bp": true
   }
 }
