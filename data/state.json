@@ -2,7 +2,7 @@
   "lastChecked": {
     "caz37OwO": 1773231115,
     "jet0312": 1773072872,
-    "TOMATO10": 1773062680,
+    "TOMATO10": 1773245155,
     "toka0428": 1773061914
   },
   "solvedProblems": {
@@ -160,6 +160,8 @@
     "TOMATO10:abc185_e": true,
     "caz37OwO:abc440_g": true,
     "caz37OwO:abc304_b": true,
-    "caz37OwO:abc361_g": true
+    "caz37OwO:abc361_g": true,
+    "TOMATO10:abc191_e": true,
+    "TOMATO10:abc187_f": true
   }
 }
