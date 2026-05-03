@@ -3,7 +3,7 @@
     "caz37OwO": 1777725521,
     "jet0312": 1777740406,
     "TOMATO10": 1777726815,
-    "toka0428": 1777751951
+    "toka0428": 1777764640
   },
   "solvedProblems": {
     "caz37OwO:arc189_c": true,
@@ -673,6 +673,12 @@
     "jet0312:abc134_c": true,
     "jet0312:abc132_c": true,
     "toka0428:agc027_d": true,
-    "toka0428:yahoo_procon2018_final_b": true
+    "toka0428:yahoo_procon2018_final_b": true,
+    "toka0428:kupc2019_g": true,
+    "toka0428:arc091_c": true,
+    "toka0428:arc091_b": true,
+    "toka0428:arc091_a": true,
+    "toka0428:agc004_c": true,
+    "toka0428:pakencamp_2018_day2_f": true
   }
 }
