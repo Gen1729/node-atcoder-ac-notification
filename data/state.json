@@ -1,8 +1,8 @@
 {
   "lastChecked": {
-    "caz37OwO": 1778310169,
+    "caz37OwO": 1778326875,
     "jet0312": 1778250448,
-    "TOMATO10": 1778312908,
+    "TOMATO10": 1778327910,
     "toka0428": 1778215919
   },
   "solvedProblems": {
@@ -724,6 +724,10 @@
     "caz37OwO:arc204_b": true,
     "TOMATO10:ndpc2026_a": true,
     "caz37OwO:arc167_d": true,
-    "TOMATO10:ndpc2026_b": true
+    "TOMATO10:ndpc2026_b": true,
+    "TOMATO10:ndpc2026_c": true,
+    "TOMATO10:abc300_f": true,
+    "caz37OwO:arc167_c": true,
+    "caz37OwO:arc201_d": true
   }
 }
