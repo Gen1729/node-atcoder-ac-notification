@@ -2,7 +2,7 @@
   "lastChecked": {
     "caz37OwO": 1781271272,
     "jet0312": 1781198206,
-    "TOMATO10": 1781200368,
+    "TOMATO10": 1781285667,
     "toka0428": 1781237779
   },
   "solvedProblems": {
@@ -961,6 +961,7 @@
     "jet0312:abc002_3": true,
     "caz37OwO:arc193_b": true,
     "toka0428:code_festival_2017_quala_d": true,
-    "caz37OwO:arc195_d": true
+    "caz37OwO:arc195_d": true,
+    "TOMATO10:abc325_f": true
   }
 }
