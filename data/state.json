@@ -1,9 +1,9 @@
 {
   "lastChecked": {
-    "caz37OwO": 1781316417,
+    "caz37OwO": 1781339821,
     "jet0312": 1781198206,
-    "TOMATO10": 1781288354,
-    "toka0428": 1781240628
+    "TOMATO10": 1781290291,
+    "toka0428": 1781321084
   },
   "solvedProblems": {
     "caz37OwO:arc189_c": true,
@@ -974,6 +974,13 @@
     "caz37OwO:abc300_b": true,
     "caz37OwO:abc300_c": true,
     "caz37OwO:abc300_d": true,
-    "caz37OwO:abc300_e": true
+    "caz37OwO:abc300_e": true,
+    "TOMATO10:abc327_f": true,
+    "caz37OwO:abc300_f": true,
+    "caz37OwO:abc300_g": true,
+    "caz37OwO:tessoku_book_bp": true,
+    "caz37OwO:tessoku_book_bq": true,
+    "caz37OwO:abc239_g": true,
+    "toka0428:agc016_c": true
   }
 }
