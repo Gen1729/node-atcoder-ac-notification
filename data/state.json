@@ -2,7 +2,7 @@
   "lastChecked": {
     "caz37OwO": 1782913624,
     "jet0312": 1782923826,
-    "TOMATO10": 1782969158,
+    "TOMATO10": 1782977231,
     "toka0428": 1782655159
   },
   "solvedProblems": {
@@ -1235,6 +1235,10 @@
     "TOMATO10:dp_e": true,
     "TOMATO10:dp_f": true,
     "TOMATO10:dp_g": true,
-    "TOMATO10:dp_i": true
+    "TOMATO10:dp_i": true,
+    "TOMATO10:dp_k": true,
+    "TOMATO10:dp_l": true,
+    "TOMATO10:dp_n": true,
+    "TOMATO10:dp_j": true
   }
 }
