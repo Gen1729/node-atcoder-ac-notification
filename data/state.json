@@ -1,9 +1,9 @@
 {
   "lastChecked": {
     "caz37OwO": 1786882830,
-    "jet0312": 1786806616,
+    "jet0312": 1786899201,
     "TOMATO10": 1786890381,
-    "toka0428": 1786892055
+    "toka0428": 1786904003
   },
   "solvedProblems": {
     "caz37OwO:arc189_c": true,
@@ -1805,6 +1805,10 @@
     "caz37OwO:arc227_a": true,
     "caz37OwO:arc227_b": true,
     "toka0428:arc227_a": true,
-    "toka0428:arc227_b": true
+    "toka0428:arc227_b": true,
+    "toka0428:arc226_d": true,
+    "jet0312:awc0133_a": true,
+    "jet0312:awc0133_b": true,
+    "jet0312:awc0133_c": true
   }
 }
