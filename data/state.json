@@ -1,7 +1,7 @@
 {
   "lastChecked": {
-    "caz37OwO": 1789217620,
-    "jet0312": 1789264568,
+    "caz37OwO": 1789279113,
+    "jet0312": 1789283869,
     "TOMATO10": 1789215551,
     "toka0428": 1789240876
   },
@@ -2147,6 +2147,10 @@
     "jet0312:abc475_b": true,
     "jet0312:abc475_d": true,
     "jet0312:abc475_c": true,
-    "toka0428:abc475_e": true
+    "toka0428:abc475_e": true,
+    "caz37OwO:typical90_u": true,
+    "caz37OwO:arc165_d": true,
+    "caz37OwO:arc149_c": true,
+    "caz37OwO:arc142_d": true
   }
 }
