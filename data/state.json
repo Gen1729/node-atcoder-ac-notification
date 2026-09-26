@@ -3,7 +3,7 @@
     "caz37OwO": 1790125227,
     "jet0312": 1790355558,
     "TOMATO10": 1790000809,
-    "toka0428": 1789922525
+    "toka0428": 1790402927
   },
   "solvedProblems": {
     "caz37OwO:arc189_c": true,
@@ -2252,6 +2252,7 @@
     "jet0312:awc0164_e": true,
     "jet0312:awc0162_a": true,
     "jet0312:awc0162_b": true,
-    "jet0312:awc0162_c": true
+    "jet0312:awc0162_c": true,
+    "toka0428:typical90_ao": true
   }
 }
