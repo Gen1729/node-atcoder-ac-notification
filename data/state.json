@@ -3,7 +3,7 @@
     "caz37OwO": 1794659463,
     "jet0312": 1794843804,
     "TOMATO10": 1794834885,
-    "toka0428": 1794840320
+    "toka0428": 1794914567
   },
   "solvedProblems": {
     "caz37OwO:arc189_c": true,
@@ -2833,6 +2833,23 @@
     "jet0312:awc0201_b": true,
     "jet0312:awc0201_c": true,
     "jet0312:awc0201_d": true,
-    "jet0312:abc287_c": true
+    "jet0312:abc287_c": true,
+    "toka0428:arc105_d": true,
+    "toka0428:arc106_d": true,
+    "toka0428:abc349_a": true,
+    "toka0428:abc409_a": true,
+    "toka0428:abc300_b": true,
+    "toka0428:abc432_b": true,
+    "toka0428:abc441_c": true,
+    "toka0428:abc248_c": true,
+    "toka0428:abc366_d": true,
+    "toka0428:abc276_a": true,
+    "toka0428:abc443_a": true,
+    "toka0428:abc247_b": true,
+    "toka0428:abc410_b": true,
+    "toka0428:abc212_c": true,
+    "toka0428:abc308_c": true,
+    "toka0428:abc472_d": true,
+    "toka0428:arc108_d": true
   }
 }
